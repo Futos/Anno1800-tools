@@ -2,8 +2,34 @@
     list-style: none;
     display: flex;
     align-items: center;
+    padding: 0;
 
     li {
         padding: 8px;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &:before {
+        content: '';
+    }
+
+    &:before, .navSearch {
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+
+    .navSearch {
+        display: flex;
+        justify-content: flex-end;
+
+        .input-group {
+            max-width: 250px;
+            margin: 0;
+        }
     }
 }
