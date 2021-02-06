@@ -13,7 +13,21 @@ $secondary-darkest: #06163E;
 $main-bg: #152129;
 $main-font: #F5F5F5;
 
-
 // Bootstrap settings
 $body-bg: $main-bg;
 $body-color: $main-font;
+
+$theme-colors: (
+    "primary": $primary,
+    "primary-lighter": $primary-lighter,
+    "primary-lightest": $primary-lightest,
+    "primary-darker": $primary-darker,
+    "primary-darkest": $primary-darkest,
+    "secondary": $secondary,
+    "secondary-lighter": $secondary-lighter,
+    "secondary-lightest": $secondary-lightest,
+    "secondary-darker": $secondary-darker,
+    "secondary-darkest": $secondary-darkest,
+    "main-bg": $main-bg,
+    "main-font": $main-font,
+);

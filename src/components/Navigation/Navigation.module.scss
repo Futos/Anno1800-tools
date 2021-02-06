@@ -42,19 +42,22 @@
 
     .navSearch {
         display: flex;
+        align-items: center;
         justify-content: flex-end;
 
-        .input-group {
-            max-width: 250px;
-            margin: 0;
-
-            input {
-                background-color: $primary-darker;
-                color: $main-font;
-                border: 0;
-
-                &::placeholder {
-                    color: rgba($main-font, .5);
+        :global {
+            .input-group {
+                max-width: 250px;
+                margin: 0;
+    
+                input {
+                    background-color: $primary-darker;
+                    color: $main-font;
+                    border: 0;
+    
+                    &::placeholder {
+                        color: rgba($main-font, .5);
+                    }
                 }
             }
         }
