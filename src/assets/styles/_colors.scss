@@ -4,5 +4,16 @@ $primary-lightest: #A04E6B;
 $primary-darker: #43061B;
 $primary-darkest: #25000D;
 
-$main-bg: #001524;
+$secondary: #263c73;
+$secondary-lighter: #3C5288;
+$secondary-lightest: #6073A4;
+$secondary-darker: #12275B;
+$secondary-darkest: #06163E;
+
+$main-bg: #152129;
 $main-font: #F5F5F5;
+
+
+// Bootstrap settings
+$body-bg: $main-bg;
+$body-color: $main-font;

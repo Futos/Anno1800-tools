@@ -17,8 +17,21 @@ function Navigation () {
             <li>
                 <Link to="/duden">Duden</Link>
             </li>
+            <li>
+                <Link to="/pupulation-groups">Bevölkerungsgruppen</Link>
+                <ul className="navSubmenu">
+                    <li>
+                        <Link to="/bauern">Bauern</Link>
+                    </li>
+                    <li>
+                        <Link to="/undso">Undso</Link>
+                    </li>
+                </ul>
+            </li>
         </ul>
-        <Search variant="dark" formInputClass="navSearch" />
+
+
+        <Search formInputClass="navSearch" />
     </nav>
   );
 }

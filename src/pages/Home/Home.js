@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import Header from '../../components/Header/Header';
+import ProductionChain from '../../components/ProductionChains/ProductionChains';
 import Search from '../../components/Search/Search';
 import {popGroup} from '../../assets/dummy/civData';
 
@@ -14,11 +15,13 @@ function Home() {
 
     const populationHTML = [];
 
-    popGroup.forEach((element) => {
-        if (element.name.toLowerCase().includes(searchValue.toLowerCase())) {
-            populationHTML.push(<li className="list-group-item"><a href={element.link}>{element.name}</a></li>);
-        }
-    });
+    if (searchValue) {
+        popGroup.forEach((element) => {
+            if (element.name.toLowerCase().includes(searchValue.toLowerCase())) {
+                populationHTML.push(<li className="list-group-item"><a href={element.link}>{element.name}</a></li>);
+            }
+        });
+    }
 
     let popReturnHTML = 'Keine Ergebnisse gefunden';
     if (populationHTML && populationHTML.length > 0) {
@@ -35,6 +38,8 @@ function Home() {
                 <ul className="list-group">
                     {popReturnHTML}
                 </ul>
+                <h2 className="pt-5 pb-2">Produktionsketten</h2>
+                <ProductionChain/>
             </main>
         </>
     );
