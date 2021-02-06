@@ -5,7 +5,7 @@ import ProductionChain from '../../components/ProductionChains/ProductionChains'
 import Search from '../../components/Search/Search'
 import { findCharWithTollerance, searchify } from '../../helpers/helpers'
 import { popGroup } from '../../assets/dummy/civData'
-import { bauern } from '../../assets/dummy/prductionChain'
+import { bauern } from '../../assets/dummy/productionChain'
 
 function Home () {
   const [searchValue, setSearchValue] = useState('')
@@ -16,10 +16,10 @@ function Home () {
   }
 
   const filterElems = (elements, value) => {
-    const newList = []
-    elements.forEach(element => {
-      if (findCharWithTollerance(searchify(JSON.stringify(element)), searchify(value))) {
-        newList.push(element)
+    const newList = {}
+    Object.keys(elements).forEach(element => {
+      if  (findCharWithTollerance(searchify(JSON.stringify(elements[element])), searchify(value))) { 
+         newList.[element] = elements[element]
       }
     })
 

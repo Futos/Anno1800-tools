@@ -1,13 +1,12 @@
 import Header from '../../components/Header/Header'
-import { bauern } from '../../assets/dummy/prductionChain'
-import { getProdElemByKey } from '../../helpers/prodDataHelpers'
+import { bauern } from '../../assets/dummy/productionChain'
 
 function Gebaeude ({ location }) {
   const hash = location.hash
   let entry = null
 
   if (hash) {
-    entry = getProdElemByKey(bauern, hash.substring(1))
+    entry = bauern[hash.substring(1)]
   }
 
   const renderDetail = () => {

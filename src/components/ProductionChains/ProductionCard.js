@@ -2,9 +2,8 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 import Badge from 'react-bootstrap/Badge'
 import { Link } from 'react-router-dom'
-import { getProdElemByKey } from '../../helpers/prodDataHelpers'
 import { roundUp } from '../../helpers/calculations'
-import { bauern } from '../../assets/dummy/prductionChain'
+import { bauern } from '../../assets/dummy/productionChain'
 import { productionTypes } from '../../assets/dummy/productionTypes'
 
 function ProductionCard ({id, name, requires, prodDuration, prodType}) {
@@ -20,9 +19,11 @@ function ProductionCard ({id, name, requires, prodDuration, prodType}) {
     return returnRefs
   }
 
+console.log('id', id)
+
   const renderTooltip = (props, name) => (
     <Tooltip id='button-tooltip' {...props}>
-      {productionTypes[id]}
+      {productionTypes[prodType].tooltip}
     </Tooltip>
   )
 
