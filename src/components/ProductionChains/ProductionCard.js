@@ -19,21 +19,11 @@ function ProductionCard ({id, name, requires, prodDuration, prodType}) {
     return returnRefs
   }
 
-console.log('id', id)
-
   const renderTooltip = (props, name) => (
     <Tooltip id='button-tooltip' {...props}>
       {productionTypes[prodType].tooltip}
     </Tooltip>
   )
-
-  const BadgeVariant = function () {
-    if (prodType === 'necessity') {
-      return <Badge as='div' variant='danger'>Bedürfnis</Badge>
-    } else if (prodType === 'production') {
-      return <Badge as='div' variant='warning'>Produktion</Badge>
-    }
-  }
 
   const servingHTML = []
   const referenceObjects = getServedObjs(id)
@@ -67,7 +57,14 @@ console.log('id', id)
           delay={{ show: 250, hide: 400 }}
           overlay={props => renderTooltip(props)}
         >
-          <div className='d-inline-block'><BadgeVariant /></div>
+          <div className='d-inline-block'>
+            <Badge
+              as='div'
+              variant={productionTypes[prodType].bootstrapColor}
+            >
+              {productionTypes[prodType].name}
+            </Badge>
+          </div>
         </OverlayTrigger>
 
         <div><strong>Zeit:</strong> {prodDuration}s</div>
