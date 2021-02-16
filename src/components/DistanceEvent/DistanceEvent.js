@@ -8,7 +8,6 @@ function DistanceEvent (props) {
 
     const calculateDistance = (elem, mouseX, mouseY) => {
         const elPos = elem.getBoundingClientRect();
-        console.log('elPos', elPos)
         const centerElPos = {
             x: elPos.x + elPos.width / 2,
             y: elPos.y + elPos.height / 2,
