@@ -5,12 +5,19 @@ $primary-darker: #43061B;
 $primary-darkest: #25000D;
 
 $secondary: #263c73;
-$secondary-lighter: #3C5288;
-$secondary-lightest: #6073A4;
+$secondary-light: #3C5288;
+$secondary-lighter: #6073A4;
+$secondary-lightest: #9faecf;
 $secondary-darker: #12275B;
 $secondary-darkest: #06163E;
 
-$main-bg: #152129;
+$gray: #152129;
+$gray-darker: #0c1318;
+$gray-light: #202d36;
+$gray-lighter: #3a4349;
+$gray-lightest: #4c555c;
+
+$main-bg: $gray;
 $main-font: #F5F5F5;
 
 // Bootstrap settings
@@ -24,10 +31,16 @@ $theme-colors: (
     "primary-darker": $primary-darker,
     "primary-darkest": $primary-darkest,
     "secondary": $secondary,
+    "secondary-light": $secondary-light,
     "secondary-lighter": $secondary-lighter,
     "secondary-lightest": $secondary-lightest,
     "secondary-darker": $secondary-darker,
     "secondary-darkest": $secondary-darkest,
+    "gray": $gray,
+    "gray-darker": $gray-darker,
+    "gray-light": $gray-light,
+    "gray-lighter": $gray-lighter,
+    "gray-lightest": $gray-lightest,
     "main-bg": $main-bg,
     "main-font": $main-font,
 );

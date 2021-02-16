@@ -1,0 +1,49 @@
+@import '../../assets/styles/variables';
+
+.productionType {
+    width: 20px;
+    display: block;
+    height: 20px;
+    border-radius: 10px;
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    background-color: red;
+
+    &__needs {
+        background-color: orange;  
+    }
+
+    &__production {
+        background-color: red;
+    }
+}
+
+.productionCard {
+    background-color: $secondary;
+    transition: .25s;
+    position: relative;
+
+    &:hover {
+        text-decoration: none;
+        background-color: $secondary-light;
+    }
+
+    &.muted {
+        background-color: $gray-light;
+
+        &:hover {
+            background-color: $secondary-light;
+        }
+    }
+}
+
+.bgFader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($main-font, .125);
+    transition: .75s;
+}

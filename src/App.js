@@ -10,13 +10,15 @@ import Bauer from './pages/Bauer/Bauer'
 
 function App () {
   return (
-    <Router>
-      <Switch>
-        <Route path='/gebaeude' component={Gebaeude} />
-        <Route exact path='/' component={Home} />
-        <Route path='/bauer' component={Bauer} />
-      </Switch>
-    </Router>
+    <>
+      <Router>
+        <Switch>
+          <Route path='/gebaeude' component={Gebaeude} />
+          <Route exact path='/' component={Home} />
+          <Route path='/bauer' component={Bauer} />
+        </Switch>
+      </Router>
+    </>
   )
 }
 

@@ -5,8 +5,14 @@ import { Link } from 'react-router-dom'
 import { roundUp } from '../../helpers/calculations'
 import { bauern } from '../../assets/dummy/productionChain'
 import { productionTypes } from '../../assets/dummy/productionTypes'
+import IonIcon from '@reacticons/ionicons'
+import DistanceEvent from '../DistanceEvent/DistanceEvent'
+import { useState } from 'react'
 
-function ProductionCard ({id, name, requires, prodDuration, prodType}) {
+import styles from './ProductionCard.module.scss'
+
+function ProductionCard ({id, name, requires, prodDuration, maintenanceCost, prodType, muted}) {
+  const [bgPercentage, setBgPercentage] = useState(100);
   const getServedObjs = function (key) {
     const returnRefs = []
 
@@ -17,6 +23,12 @@ function ProductionCard ({id, name, requires, prodDuration, prodType}) {
     })
 
     return returnRefs
+  }
+
+  const calcBg = distance => {
+    if (distance != bgPercentage) {
+      setBgPercentage(distance);
+    }
   }
 
   const renderTooltip = (props, name) => (
@@ -48,30 +60,42 @@ function ProductionCard ({id, name, requires, prodDuration, prodType}) {
     }
   })
 
+  const cardClassNames = ["p-3 rounded h-100 d-flex flex-column text-white", styles.productionCard];
+  
+  if (muted) {
+    cardClassNames.push(styles.muted)
+  }
+
   return (
-    <div className='col col-4 mb-4'>
-      <Link to={`/gebaeude#${id}`} className='p-3 bg-secondary rounded h-100 d-block text-white'>
-        <h3>{name}</h3>
+    <DistanceEvent className="col col-4 mb-4" onMove={calcBg} key={id}>
+      <Link to={`/gebaeude#${id}`} className={cardClassNames.join(' ')}>
+        <div className={styles.bgFader} style={{opacity: 1 - bgPercentage / 100}} />
         <OverlayTrigger
           placement='right'
           delay={{ show: 250, hide: 400 }}
           overlay={props => renderTooltip(props)}
         >
-          <div className='d-inline-block'>
+          <div className='d-inline-flex mb-2'>
             <Badge
               as='div'
-              variant={productionTypes[prodType].bootstrapColor}
+              variant={productionTypes[prodType] && productionTypes[prodType].bootstrapColor} 
             >
-              {productionTypes[prodType].name}
+              {productionTypes[prodType] && productionTypes[prodType].name}
             </Badge>
           </div>
         </OverlayTrigger>
+        <h3 className="mb-1">{name}</h3>
 
-        <div><strong>Zeit:</strong> {prodDuration}s</div>
-        {productionHTML.length > 0 ? <div><strong>Benötigt:</strong><ul>{productionHTML}</ul></div> : ''}
+        <div className="mb-4">
+          <Badge variant="dark" className="mr-2"><IonIcon name="timer-outline" /> {prodDuration}s</Badge>
+          <Badge variant="dark">Unterhalt: {maintenanceCost}$</Badge>
+        </div>
+        {productionHTML.length > 0 ? <div><strong>Benötigt:</strong>
+        <ul>{productionHTML}</ul>
+        </div> : ''}
         {servingHTML.length > 0 ? <div><strong>Versorgt:</strong><ul>{servingHTML}</ul></div> : ''}
       </Link>
-    </div>
+    </DistanceEvent>
   )
 }
 

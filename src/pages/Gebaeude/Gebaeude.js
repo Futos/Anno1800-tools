@@ -20,11 +20,6 @@ function Gebaeude ({ location }) {
     )
   }
 
-  const array1 = { apfel: 'apfel', birne: 'birne' }
-  const array2 = { ...array1, birne: 'orange' }
-
-  console.log('array2', array2)
-
   return (
     <>
       <Header />

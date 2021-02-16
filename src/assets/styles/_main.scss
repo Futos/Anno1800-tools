@@ -1,2 +1,29 @@
 @import "./variables";
 @import "~bootstrap/scss/bootstrap";
+
+body {
+    font-family: $text-font;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+strong {
+    font-weight: 600;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    font-family: $headline-font;
+    font-weight: 400;
+}
+
+h1, .h1 {
+    font-size: 4rem;
+}
+
+h2, .h2 {
+    font-size: 3rem;
+}
+
+h3, .h3 {
+    font-size: 2rem;
+}

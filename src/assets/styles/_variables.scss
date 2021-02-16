@@ -1,2 +1,9 @@
 @import './colors';
+@import './fonts';
 @import './spacings';
+
+$font-size-base: 18px; // this changes the font-size throughout bootstrap
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+$headline-font: 'Newsreader', serif;
+$text-font: 'Open Sans', sans-serif;
