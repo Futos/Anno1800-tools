@@ -46,20 +46,20 @@ export const bauern = {
     requires: [],
     prodDuration: 30,
     maintenanceCost: 10,
-    prodType: 'production'    
+    prodType: 'production'
   },
   ziegelei: {
     name: 'Ziegelei',
     requires: ['lehmgrube'],
     prodDuration: 60,
     maintenanceCost: 10,
-    prodType: 'production'    
+    prodType: 'production'
   },
   fischereihafen: {
     name: 'Fischereihafen',
     prodDuration: 60,
     maintenanceCost: 40,
-    prodType: 'necessity'    
+    prodType: 'necessity'
   }
 }
 
@@ -73,5 +73,5 @@ export const arbeiter = [
 
 export default {
   bauern,
-  arbeiter,
+  arbeiter
 }

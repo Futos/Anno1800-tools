@@ -35,7 +35,6 @@ function Home () {
   useEffect(() => {
     const filtered = filterElems(bauern, searchValue);
     setSearchObj(filtered);
-    console.log('fobj', filtered);
   }, [searchValue])
 
   return (
